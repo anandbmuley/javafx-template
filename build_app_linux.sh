@@ -31,7 +31,7 @@ mkdir -p target/installer/input/libs/
 
 cp target/libs/* target/installer/input/libs/
 cp target/${MAIN_JAR} target/installer/input/libs/
-cp -r production-db target/installer/input/libs/
+cp -r local-db target/installer/input/libs/
 
 # ------ REQUIRED MODULES ---------------------------------------------------
 # Use jlink to detect all modules that are required to run the application.

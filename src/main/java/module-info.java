@@ -18,5 +18,8 @@ module abm.javafxtemplate {
     opens abm.javafxtemplate.config to spring.core, spring.beans,spring.context;
     opens abm.javafxtemplate.dao.entities to org.hibernate.orm.core,spring.core;
     opens abm.javafxtemplate.services to spring.beans;
+    opens abm.javafxtemplate.controllers to spring.beans, javafx.fxml;
+    opens abm.javafxtemplate.converters to spring.beans;
+    opens abm.javafxtemplate.controllers.dtos to javafx.base;
     exports abm.javafxtemplate;
 }

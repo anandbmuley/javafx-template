@@ -24,8 +24,8 @@ IF EXIST target\installer rmdir /S /Q target\installer
 
 xcopy /S /Q target\libs\* target\installer\input\libs\
 copy target\%MAIN_JAR% target\installer\input\libs\
-mkdir target\installer\input\libs\license-db
-copy production-db target\installer\input\libs\license-db\
+mkdir target\installer\input\libs\local-db
+copy local-db target\installer\input\libs\local-db\
 
 rem ------ REQUIRED MODULES ---------------------------------------------------
 rem Use jlink to detect all modules that are required to run the application.
