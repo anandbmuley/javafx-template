@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-@PropertySource("classpath:app-${spring.profiles.active:windows}.properties")
+@PropertySource("classpath:app-${spring.profiles.active:local}.properties")
 public class AppProperties {
 
     @Value("${db.url}")
@@ -20,7 +20,7 @@ public class AppProperties {
     @Value("${db.driver}")
     private String dbDriver;
 
-    @Value("${spring.profiles.active:windows}")
+    @Value("${spring.profiles.active:local}")
     private String activeProfile;
 
     public String getDbUrl() {

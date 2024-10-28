@@ -1,3 +1,4 @@
 .idea
 target
-target/classes/abm/javafxtemplate/hello-view.fxml
+logs/*.log
+logs/*.gz
