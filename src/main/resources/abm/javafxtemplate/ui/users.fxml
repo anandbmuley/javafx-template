@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="10.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="abm.javafxtemplate.controllers.UsersController">
+   <children>
+      <HBox spacing="465.0">
+         <children>
+            <Label styleClass="title" text="Registered users" />
+            <Button mnemonicParsing="false" onAction="#showAddUserModal" text="Add User" />
+         </children>
+      </HBox>
+      <TableView fx:id="usersTable" prefHeight="200.0">
+        <columns>
+          <TableColumn fx:id="nameCol" prefWidth="200.0" text="Name" />
+          <TableColumn fx:id="emailCol" prefWidth="300.0" text="Email" />
+            <TableColumn fx:id="mobileCol" prefWidth="200.0" text="Mobile" />
+        </columns>
+      </TableView>
+   </children>
+   <stylesheets>
+      <URL value="@../../../css/index.css" />
+      <URL value="@../../../css/users.css" />
+   </stylesheets>
+</VBox>

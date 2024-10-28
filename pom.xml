@@ -28,7 +28,7 @@
         <mockito.version>4.5.1</mockito.version>
         <hsqldb.version>2.6.1</hsqldb.version>
         <spring-jdbc.version>5.3.20</spring-jdbc.version>
-        <javafx-controls.version>${maven-compiler-plugin.source}.0.1</javafx-controls.version>
+        <javafx-controls.version>17.0.1</javafx-controls.version>
         <maven-compiler-plugin.source>17</maven-compiler-plugin.source>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
@@ -127,7 +127,7 @@
         <dependency>
             <groupId>org.testfx</groupId>
             <artifactId>testfx-junit5</artifactId>
-            <version>4.0.15-alpha</version>
+            <version>4.0.18</version>
             <scope>test</scope>
         </dependency>
         <!-- Testing JAVAFX HEADLESS -->

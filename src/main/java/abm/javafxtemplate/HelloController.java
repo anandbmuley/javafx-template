@@ -13,6 +13,8 @@ import java.util.ResourceBundle;
 public class HelloController implements Initializable {
     public TextField name;
     public Label successMessage;
+    public TextField email;
+    public TextField mobileNo;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -27,7 +29,7 @@ public class HelloController implements Initializable {
     @FXML
     protected void handleOnSave() {
         showSuccessMessage(false);
-        var userEntity = new UserEntity(name.getText());
+        var userEntity = new UserEntity(name.getText(), email.getText(), mobileNo.getText());
         SampleApp.applicationContext.getBean(UserService.class).save(userEntity);
         name.clear();
         showSuccessMessage(true);

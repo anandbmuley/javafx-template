@@ -1,11 +1,14 @@
 package abm.javafxtemplate.config;
 
+import abm.javafxtemplate.converters.UserEntityToUserDtoConverter;
 import abm.javafxtemplate.factories.DaoFactory;
 import jakarta.persistence.EntityManagerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.convert.ConversionService;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.format.support.FormattingConversionService;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -30,7 +33,6 @@ public class ApplicationConfig {
         return driverManagerDataSource;
     }
 
-
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(AppProperties appProperties) {
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
@@ -48,6 +50,13 @@ public class ApplicationConfig {
         JpaTransactionManager txManager = new JpaTransactionManager();
         txManager.setEntityManagerFactory(entityManagerFactory);
         return txManager;
+    }
+
+    @Bean
+    public ConversionService getConversionService() {
+        FormattingConversionService conversionService = new FormattingConversionService();
+        conversionService.addConverter(new UserEntityToUserDtoConverter());
+        return conversionService;
     }
 
 }
